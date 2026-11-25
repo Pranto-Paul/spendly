@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Terms and Conditions - Spendly{% endblock %}
+
+{% block content %}
+
+<main class="main-content">
+    <section class="page-intro" id="introduction">
+        <h1 class="page-title">Our Terms and Conditions</h1>
+        <p class="page-subtitle">Last Updated: {{ now.strftime('%Y-%m-%d') }}</p>
+        <p>Welcome to the Terms and Conditions page. By using Spendly, you are agreeing to the terms outlined below. We are committed to providing a reliable and transparent service.</p>
+    </section>
+
+    <div class="terms-container">
+        <section id="acceptance">
+            <h2 class="terms-title">Acceptance of Terms</h2>
+            <p class="terms-body">By accessing or using the Spendly service, you are agreeing to be bound by these Terms and Conditions. These terms govern your use of our application, including any changes to these terms after the date of your acceptance.</p>
+            <p class="terms-fine">If you do not agree to all the terms and conditions set forth herein, you must cease using the service immediately.</p>
+        </section>
+
+        <section id="use-of-service">
+            <h2 class="terms-title">Use of Service</h2>
+            <p class="terms-body">Spendly is provided for personal financial tracking purposes. You agree to use this service in a lawful and ethical manner. We reserve the right to suspend or terminate your access to the service if we determine that your usage is in violation of these Terms.</p>
+            <p class="terms-fine">You must provide accurate and current information when registering, and you must keep your account information updated.</p>
+        </section>
+
+        <section id="user-data">
+            <h2 class="terms-title">User Data and Privacy</h2>
+            <p class="terms-body">We collect data related to your financial tracking (e.g., transaction amounts, categories, dates). This data is stored on secure servers and is used exclusively to provide the service to you and improve the functionality of the application. See our Privacy Policy (linked in the footer) for detailed information on data usage and privacy standards.</p>
+        </section>
+
+        <section id="liability">
+            <h2 class="terms-title">Limitations of Liability</h2>
+            <p class="terms-body">While we strive to ensure that the service is accurate and available, the service is provided on an "as is" and "as available" basis. Spendly, its affiliates, and its authors shall not be liable for any direct, indirect, special, or incidental damages, including loss of profits or data, arising from the use or inability to use the service.</p>
+        </section>
+
+        <section id="changes-to-terms">
+            <h2 class="terms-title">Changes to Terms</h2>
+            <p class="terms-body">These Terms and Conditions may be updated from time to time. We reserve the right to make changes to these terms at any time. If we make material changes, we will notify you by posting the new terms on the service and updating the date above. Your continued use of the service after such changes constitutes acceptance of the updated terms.</p>
+        </section>
+    </div>
+</main>
+{% endblock %}

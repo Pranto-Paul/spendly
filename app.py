@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -46,9 +47,9 @@ def edit_expense(id):
     return "Edit expense — coming in Step 8"
 
 
-@app.route("/expenses/<int:id>/delete")
-def delete_expense(id):
-    return "Delete expense — coming in Step 9"
+@app.route("/terms")
+def terms():
+    return render_template("terms.html", now=datetime.now())
 
 
 if __name__ == "__main__":

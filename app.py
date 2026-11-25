@@ -1,7 +1,14 @@
 from flask import Flask, render_template
 from datetime import datetime
 
+from database.db import get_db, init_db, seed_db
+
 app = Flask(__name__)
+
+# Ensure the database and seed data are ready before routes are used
+with app.app_context():
+    init_db()
+    seed_db()
 
 
 # ------------------------------------------------------------------ #

@@ -51,6 +51,10 @@ def edit_expense(id):
 def terms():
     return render_template("terms.html", now=datetime.now())
 
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html", now=datetime.now())
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

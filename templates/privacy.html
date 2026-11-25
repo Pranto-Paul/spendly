@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy - Spendly{% endblock %}
+
+{% block content %}
+
+<main class="main-content">
+    <section class="page-intro" id="introduction">
+        <h1 class="page-title">Our Privacy Policy</h1>
+        <p class="page-subtitle">Last Updated: {{ now.strftime('%Y-%m-%d') }}</p>
+        <p>Welcome to the Privacy Policy page. This policy explains how Spendly collects, uses, and protects your personal information when you use our expense tracking application.</p>
+    </section>
+
+    <div class="terms-container">
+        <section id="information-collection">
+            <h2 class="terms-title">Information Collection</h2>
+            <p class="terms-body">We collect information you provide directly to us, such as your email address, name, and financial tracking data when you register for an account or log expenses in Spendly.</p>
+        </section>
+
+        <section id="use-of-information">
+            <h2 class="terms-title">Use of Information</h2>
+            <p class="terms-body">The information we collect is used to provide, maintain, and improve our service, personalize your experience, and communicate with you about your account or service updates.</p>
+        </section>
+
+        <section id="data-protection">
+            <h2 class="terms-title">Data Protection</h2>
+            <p class="terms-body">We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Your data is stored securely on our servers.</p>
+        </section>
+
+        <section id="data-sharing">
+            <h2 class="terms-title">Sharing of Information</h2>
+            <p class="terms-body">We do not sell, trade, or rent your personal information to third parties. We may share aggregated, non-personally identifiable information for analytical purposes.</p>
+        </section>
+
+        <section id="changes-to-policy">
+            <h2 class="terms-title">Changes to Privacy Policy</h2>
+            <p class="terms-body">We may update this Privacy Policy from time to time. If we make material changes, we will notify you by posting the new policy on the service and updating the date above.</p>
+        </section>
+    </div>
+</main>
+
+{% endblock %}

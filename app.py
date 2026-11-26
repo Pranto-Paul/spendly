@@ -99,7 +99,7 @@ def login():
             if user and check_password_hash(user["password_hash"], password):
                 session["user_id"] = user["id"]
                 flash(f"Welcome back, {user['name']}!", "success")
-                return redirect(url_for("landing"))
+                return redirect(url_for("profile"))
 
             error = "Invalid email or password."
 
@@ -116,14 +116,63 @@ def logout():
     return redirect(url_for("login"))
 
 
+# --- HARDCODED MOCK DATA STRUCTURES (FOR DESIGN STAGE) ---
+MOCK_USER_PROFILE = {
+    "user_id": 1001,
+    "first_name": "Pranto",
+    "last_name": "Paul",
+    "email": "prantopaul@example.com",
+    "is_active": True,
+    "subscription_tier": "premium",
+    "total_expenses_last_month": 452.75,
+    "last_login_date": "2026-11-20T14:30:00Z"
+}
+
+MOCK_SETTINGS_DATA = {
+    "password_hash_placeholder": "hashed_example_string_123",
+    "email_confirmation": "prantopaul@example.com",
+    "notification_preferences": {
+        "email_alerts": True,
+        "sms_alerts": False,
+        "push_notifications": True
+    },
+    "timezone": "America/Los_Angeles"
+}
+
+MOCK_EXPENSE_LOG = [
+    {"date": "2026-11-01", "description": "Groceries run", "amount": 78.50, "category": "Food"},
+    {"date": "2026-11-05", "description": "Software subscription", "amount": 29.99, "category": "Subscription"},
+    {"date": "2026-11-15", "description": "Gas tank fill-up", "amount": 120.00, "category": "Transport"},
+    # ... up to 50 entries
+]
+# -------------------------------------------------------
+
+
 # ------------------------------------------------------------------ #
 # Placeholder routes — students will implement these                  #
 # ------------------------------------------------------------------ #
 
 
 @app.route("/profile")
+@login_required
 def profile():
-    return "Profile page — coming in Step 4"
+    # Use mock user data and mock expense log for UI design validation
+    return render_template(
+        "profile.html",
+        user=MOCK_USER_PROFILE,
+        expenses=MOCK_EXPENSE_LOG
+    )
+
+
+@app.route("/profile/settings")
+@login_required
+def profile_settings():
+    # Use mock settings data for UI design validation
+    return render_template(
+        "profile_settings.html",
+        user=MOCK_USER_PROFILE,
+        settings=MOCK_SETTINGS_DATA
+    )
 
 
 @app.route("/expenses/add")

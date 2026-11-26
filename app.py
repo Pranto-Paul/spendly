@@ -25,6 +25,8 @@ def landing():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if "user_id" in session:
+        return redirect(url_for("landing"))
     if request.method == "POST":
         name = request.form.get("name")
         email = request.form.get("email")
@@ -75,6 +77,8 @@ def login_required(f):
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if "user_id" in session:
+        return redirect(url_for("landing"))
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
